@@ -1,0 +1,16 @@
+#!/usr/bin/php
+<?php
+
+if (php_sapi_name() != 'cli') {
+  exit('For cli puposes only');
+}
+
+require __DIR__ . '/vendor/autoload.php';
+
+use Is\Pca\App;
+
+$app = new App($argv);
+
+echo $app->getUpperCase() . PHP_EOL;
+echo $app->getFancyLetter() . PHP_EOL;
+echo $app->getCSVFile() . PHP_EOL;
